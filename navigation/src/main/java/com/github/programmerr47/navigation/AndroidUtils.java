@@ -14,6 +14,11 @@ import static android.util.TypedValue.COMPLEX_UNIT_DIP;
 public class AndroidUtils {
     private AndroidUtils() {}
 
+    public static int dpToPx(float dp) {
+        float density = Resources.getSystem().getDisplayMetrics().density;
+        return Math.round(dp * density);
+    }
+
     public static float dp(@NonNull Context context, float dp) {
         return applyDimen(context, dp, COMPLEX_UNIT_DIP);
     }
